@@ -8,7 +8,7 @@ import retrofit2.http.GET;
 import ru.xpcom.howtoconnecttowebapi.pojo.AllUsers;
 import ru.xpcom.howtoconnecttowebapi.pojo.OneUser;
 
-public interface PlaceholderAPI {
+public interface ServiceAPI {
 
     @GET("api/users/1")
     Call<OneUser> getUser();

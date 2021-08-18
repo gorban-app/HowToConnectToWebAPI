@@ -25,14 +25,14 @@ public class MainActivity extends AppCompatActivity {
     public static final String TAG = "MainActivity";
     private TextView textFirstName, textLastName, textEmail;
     private ImageView imageAvatar;
-    private PlaceholderAPI api;
+    private ServiceAPI api;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Retrofit retrofit = RetrofitFactory.getRetrofit(URL_API);
-        api = retrofit.create(PlaceholderAPI.class);
+        api = retrofit.create(ServiceAPI.class);
         uiComponent();
         geSingleUser();
         geAllUser();
