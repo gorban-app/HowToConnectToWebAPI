@@ -25,20 +25,18 @@ public class MainActivity extends AppCompatActivity {
     public static final String TAG = "MainActivity";
     private TextView textFirstName, textLastName, textEmail;
     private ImageView imageAvatar;
-    Retrofit retrofit;
-    PlaceholderAPI api;
+    private PlaceholderAPI api;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        retrofit = RetrofitFactory.getRetrofit(URL_API);
+        Retrofit retrofit = RetrofitFactory.getRetrofit(URL_API);
         api = retrofit.create(PlaceholderAPI.class);
         uiComponent();
         geSingleUser();
         geAllUser();
     }
-
 
     /**
      GET One User
@@ -83,7 +81,7 @@ public class MainActivity extends AppCompatActivity {
                 assert resource != null;
                 List<AllUsers.User> list = resource.data;
                 for (AllUsers.User user : list) {
-                    Log.d(TAG, ""+user.firstName);
+                    Log.d(TAG, "User: "+user.firstName + " " + user.lastName);
                 }
             }
 

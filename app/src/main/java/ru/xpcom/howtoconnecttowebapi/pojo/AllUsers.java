@@ -1,5 +1,7 @@
 package ru.xpcom.howtoconnecttowebapi.pojo;
 
+import androidx.annotation.NonNull;
+
 import com.google.gson.annotations.SerializedName;
 
 import java.util.List;
@@ -23,5 +25,13 @@ public class AllUsers {
 
         @SerializedName("avatar")
         public String avatar;
+    }
+
+    @NonNull
+    @Override
+    public String toString() {
+        return "AllUsers{" +
+                "data=" + data +
+                '}';
     }
 }
